@@ -14,5 +14,5 @@ import java.util.UUID;
 public class ShippingRequest {
     private Integer quantity;
     private Integer userId;
-    private UUID orderid;
+    private UUID orderId;
 }

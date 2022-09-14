@@ -1,0 +1,11 @@
+orchestration:
+  product:
+    service: http://localhost:7070/product/
+  user:
+    service: http://localhost:7070/user/
+  inventory:
+    service: http://localhost:7070/inventory/
+  shipping:
+    service: http://localhost:7070/service/
+
+
