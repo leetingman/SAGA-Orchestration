@@ -13,8 +13,12 @@ import java.util.function.Predicate;
 @Service
 public class InventoryOrchestrator extends  Orchestrator{
 
+    private final InventoryClient client;
+
     @Autowired
-    private InventoryClient client;
+    public InventoryOrchestrator(InventoryClient client) {
+        this.client = client;
+    }
 
     @Override
     public Mono<OrchestrationRequestContext> create(OrchestrationRequestContext ctx) {

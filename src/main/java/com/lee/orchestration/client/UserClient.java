@@ -16,7 +16,7 @@ public class UserClient {
     private static final String REFUND = "refund";
 
 
-    public UserClient(@Value("${orchestration.user.service") String baseUrl) {
+    public UserClient(@Value("${sec03.user.service") String baseUrl) {
 
         this.client = WebClient.builder()
                 .baseUrl(baseUrl)

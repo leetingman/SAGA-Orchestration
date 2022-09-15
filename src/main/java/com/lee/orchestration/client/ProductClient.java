@@ -12,7 +12,7 @@ public class ProductClient {
 
     private final WebClient client;
 
-    public ProductClient(@Value("${orchestration.product.service}" ) String baseUrl){
+    public ProductClient(@Value("${sec03.product.service}" ) String baseUrl){
         this.client = WebClient.builder()
                 .baseUrl(baseUrl)
                 .build();

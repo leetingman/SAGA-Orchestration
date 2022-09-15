@@ -12,8 +12,11 @@ import java.util.function.Predicate;
 @Service
 public class ShippingOrchestrator extends Orchestrator{
 
+    private final ShippingClient client;
     @Autowired
-    private ShippingClient client;
+    public ShippingOrchestrator(ShippingClient client) {
+        this.client = client;
+    }
 
     @Override
     public Mono<OrchestrationRequestContext> create(OrchestrationRequestContext ctx) {

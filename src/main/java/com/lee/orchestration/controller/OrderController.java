@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/sec03")
 public class OrderController {
     private final OrchestratorService service;
 
     @Autowired
-    public OrderController(OrchestratorService orchestratorService) {
-        this.service = orchestratorService;
+    public OrderController(OrchestratorService service) {
+        this.service = service;
     }
 
     @PostMapping("order")

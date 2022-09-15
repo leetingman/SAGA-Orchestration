@@ -22,9 +22,10 @@ public class OrchestratorService {
     }
 
     public Mono<OrderResponse> placeOrder(Mono<OrderRequest> mono){
-        return mono.map(OrchestrationRequestContext::new)
+        return mono
+                .map(OrchestrationRequestContext::new)
                 .flatMap(this::getProduct)
-                .doOnNext(OrchestrationUtil::buildInventoryRequest)
+                .doOnNext(OrchestrationUtil::buildRequestContext)
                 .flatMap(fulfillmentService::placeOrder)
                 .doOnNext(this::doOrderPostProcessing)
                 .doOnNext(DebugUtil::print)
@@ -37,7 +38,8 @@ public class OrchestratorService {
         return this.productClient.getProduct(ctx.getOrderRequest().getProductId())
                 .map(Product::getPrice)
                 .doOnNext(ctx::setProductPrice)
-                .thenReturn(ctx);
+                .map(i->ctx)
+                ;
     }
 
     private void doOrderPostProcessing(OrchestrationRequestContext ctx){

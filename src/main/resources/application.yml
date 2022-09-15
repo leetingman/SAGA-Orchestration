@@ -1,11 +1,11 @@
-orchestration:
+sec03:
   product:
-    service: http://localhost:7070/product/
+    service: http://localhost:7070/sec03/product/
   user:
-    service: http://localhost:7070/user/
+    service: http://localhost:7070/sec03/user/
   inventory:
-    service: http://localhost:7070/inventory/
+    service: http://localhost:7070/sec03/inventory/
   shipping:
-    service: http://localhost:7070/service/
+    service: http://localhost:7070/sec03/shipping/
 
 

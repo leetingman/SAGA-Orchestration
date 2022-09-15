@@ -14,7 +14,7 @@ public class ShippingClient {
     private static final String CANCEL = "cancel";
 
 
-    public ShippingClient(@Value("${orchestration.shipping.service") String baseUrl) {
+    public ShippingClient(@Value("${sec03.shipping.service") String baseUrl) {
 
         this.client = WebClient.builder()
                 .baseUrl(baseUrl)
